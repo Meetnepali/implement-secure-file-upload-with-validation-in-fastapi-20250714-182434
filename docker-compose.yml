@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  announcements:
+    build: .
+    container_name: announcements_service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/usr/src/app/app
+    environment:
+      - DATABASE_URL=sqlite:///./test.db
